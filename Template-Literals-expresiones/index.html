@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Literals y expresiones</title>
+</head>
+<body>
+    <script>
+        const nombre = 'Juanito'
+        console.log(`hola, mi nombre es ${nombre}`)
+        console.log(`Mi edad es de: ${29}`)
+        console.log(`Este material es de: ${'Javascript para React'}`)
+        console.log(`Mi nombre es ${x= 'leonard'}`)
+        //ejecuto una funcion encerando la funcion entre parentesis, (function)()  el otro parentesis lo ejecuta
+        console.log(`Mi Nick es ${(function name(){return 'eCituk' })()}`)
+        console.log(`Mi segundo Nick es ${(function(){return 'eCaamal' })()}`)
+        //con arrow function
+        console.log(`Mi segundo Nick con arrow function es: ${(() =>{return 'eCituk Arrow' })()}`)
+        //condicional ternario
+        console.log(`Resultado de ternario: ${ true && 'Ternario sencillo' }`)
+        //ternario full
+        console.log(`Resultado de ternario: ${ false ? 'Ternario true resultado' : 'ternario false resultado' }`)
+        console.log(`Lista: ${['a', 'b'].map(letra => `${letra}-styled`)}`)
+    </script>
+</body>
+</html>
+
+<!-- 
+Template Literals y expresiones
+
+Agregada en Ecmascript 6 los template literals le añadirán una mejora de sintaxis a la mezcla de valores dinámicos y strings permitiendo Interpolación, strings multi línea y lógica compleja para interpretar textos.
+ -->
