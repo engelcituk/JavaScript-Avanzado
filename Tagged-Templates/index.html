@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tagged tempaltes</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            justify-content: center;
+            font-family: system-ui;
+            background-color: #f49097;
+            color: #ffffff;
+            font-size: 2rem;
+            text-shadow: 1px 1px rgba(0, 0, 0, .5)
+        }
+
+        strong{
+            color: yellow;
+            padding: .15em .4em;
+            background: #dfb2f4;
+            border-radius: 20px;
+            border: 2px solid #f2f5ff;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const message = taggedTemplate`El ${'trabajo duro'} supera al ${'talento natural'}`
+        // ...dinamycValues, parámetro rest, permiten representar un número indefinido de argumentos como un array
+        function taggedTemplate(strings, ...dinamycValues){
+            // console.log(strings, dinamycValues)
+            let newContent = ''
+            strings.forEach( (string, index) => {
+                /*let strong = ''
+                if( dinamycValues[index] ){
+                    strong = `<strong>${dinamycValues[index]}</strong>`
+                }*/
+                const strong = dinamycValues[index] ? `<strong>${dinamycValues[index]}</strong>` : ''
+                // console.log(dinamycValues[index])
+                // console.log(string)
+                // newContent += newContent + string + strong
+                // newContent += string + strong 
+                newContent += `${string} ${strong}` 
+                
+            })
+            return `<p>${newContent}</p>`
+        }
+        document.body.innerHTML =  message
+    </script>
+</body>
+</html>
+
+<!-- 
+Tagged Templates
+
+Es la mezcla de las funciones como la conocemos con los template literals que nos permitirán funciones avanzadas al poder modificar a nuestro gusto la cadena de texto final, volver a los ya dinámico mucho más dinámico.
+ -->
