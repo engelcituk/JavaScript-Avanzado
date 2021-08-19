@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recreando Styled Components</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        
+        function component(strings, ...dynamicValues) {
+            return function(props) {
+                let newContent = strings.slice()
+                console.log(newContent)
+                dynamicValues.forEach( (value, index) => {
+                    newContent[index] += props[value]
+                })
+                return newContent.join('')
+            }
+        }
+        const styled = {
+            h1: function (styles) {
+                return function (content) {
+                    return `
+                    <h1 style="${styles}">
+                        ${content}
+                    </h1>`
+                }
+            },
+            h2: '',
+            div:''
+        }
+
+        const TitleStyled = styled.h1`
+            color: orange;
+            font-family: system-ui;
+            font-size: 3rem;
+            text-shadow:2px 2px 0 black;
+            line-height: 100vh;
+        `
+        const props = {
+            message: 'No te rindas',
+            name: 'eCituk'
+        }
+        const title = component`<marquee>${'message'}</marquee>`(props)
+
+        function render(component, container) {
+            container.innerHTML = component
+        }
+
+        render(TitleStyled(title), window.container)
+    </script>
+</body>
+</html>
+
+
+<!-- 
+Recreando Styled Components
+
+Styled Components es mi librería favorita para crear estilos en React.js, básicamente mezcla la idea de crear componentes junto con la sintaxis de los template literals y gracias a los tagged templates nos entrega una sintaxis limpia y por esta razón hoy vamos a hacer una versión mínima de esta librería con lo que hemos aprendido hasta el momento.
+ -->
