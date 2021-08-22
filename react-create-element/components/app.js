@@ -12,8 +12,11 @@ class App extends Component {
             class: 'app',
             children: new Wrapper({
                 children:[
-                    new User({name: 'Ash',
-                    avatar: './img/ash.jpg'})
+                    new User({
+                        name: 'Ash',
+                        avatar: './img/ash.jpg',
+                        age: 10
+                    })
                 ],
             })
         })
