@@ -1,10 +1,22 @@
 import { Component, createElement } from './../lib/react/index.js'
 
 class User extends Component {
+    constructor(props){
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(event){
+        console.log(this.props.name)
+    }
+
+    // handleClick = (event) => console.log(this.props.name) //otra forma de ahorrarse el constructor para obtener los props
+
     render() {
         const { avatar, name } = this.props
         return createElement('div',{
             class: 'user',
+            onClick: this.handleClick,
             children: [
                 createElement('div',{
                     class: 'avantar',
@@ -23,4 +35,11 @@ export default User
 /*
 Recreando React y React DOM
 
-Seguro has usado el método render de ReactDOM o un Component de React, en esta clase no solo los vamos a usar, antes los vamos a crear con todo lo aprendido previamente en este curso. */
+Seguro has usado el método render de ReactDOM o un Component de React, en esta clase no solo los vamos a usar, antes los vamos a crear con todo lo aprendido previamente en este curso. 
+
+33.
+Soporte de Eventos en componentes
+
+
+Gracias a createElement podremos pasar propiedades de evento e interpretarlas internamente para volverlas eventos del DOM.
+*/
