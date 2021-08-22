@@ -1,8 +1,19 @@
 import { Component, createElement } from './../lib/react/index.js'
 
 class User extends Component {
+    displayName = 'User'
     state = {
         age: this.props.age
+    }
+    componentDidMount(){
+        console.log(`El componente ${this.displayName} se ha renderizado por primera vez`)
+    }
+    componentWillMount(){
+        console.log(`El componente ${this.displayName}  se va renderizar por primera vez`)
+    }
+
+    componentDidUpdate(){
+        console.log(`El componente ${this.displayName}  se ha actualizado`)
     }
     /*constructor(props){
         super(props)
@@ -15,7 +26,6 @@ class User extends Component {
 
     //otra forma de ahorrarse el constructor para obtener los props
     handleClick = (event) => {
-        console.log(this.state.age)
         this.setState({
             age: this.state.age + 1,
         })

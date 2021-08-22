@@ -9,8 +9,9 @@ function render(element, container){
     }
     
     element.update = reRender
-    let childElement = element.render()
+    let childElement = element.build()
     container.append(childElement)
+    element.componentDidMount()
 }
 
 export {
