@@ -23,14 +23,14 @@ const AvatarStyled = styled.img`
 class User extends Component {
     render() {
         const { avatar, name } = this.props
-        return `
-            ${UserStyled(`
-                ${AvatarStyled(`
-                    src="${avatar}"
-                `)}
-                <h2>${name}</h2>
-            `)}
-        `
+        return UserStyled({
+            children: [
+                AvatarStyled({
+                    src: avatar
+                }),
+                createElement('h2', null, name)
+            ]
+        }, '') 
     }
 }
 
