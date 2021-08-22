@@ -2,7 +2,9 @@ import styled from './../lib/styled-components.js'
 import { Component, createElement } from './../lib/react/index.js'
 
 const UserStyled = styled.div`
-    background-image: linear-gradient(to bottom, #f9f9f9 0%, #f9f9f9 130px,rgba(0,0,0,.15) 130px, rgba(0,0,0,.15) 131px, white 131px, white 100%);
+    background-image: linear-gradient(to bottom, ${ ({primaryColor}) => primaryColor } 0%, ${ ({primaryColor}) => primaryColor } 130px, ${ ({tertiaryColor}) => tertiaryColor } 130px,  ${ ({tertiaryColor}) => tertiaryColor } 131px, ${ ({secondaryColor}) => secondaryColor } 131px, ${ ({secondaryColor}) => secondaryColor } 100%);
+    color: ${ (props) => props.fontColor };
+    /*background: ${ ({fontColor}) => fontColor };*/
     text-align: center;
     overflow: hidden;
     padding: 20px;
@@ -61,13 +63,14 @@ class User extends Component {
         const { mode } = this.state
         const colors = ( mode === 'light') ? theme.light : theme.dark 
         const { avatar, name } = this.props
-        console.log(colors)
+        // console.log(colors)
         return UserStyled({
+            ...colors,
             children: [
                 AvatarStyled({
                     src: avatar
                 }),
-                createElement('h2', null, name)
+                createElement('h2', null, `${name} ${mode} mode`)
             ]
         }, '') 
     }
