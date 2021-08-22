@@ -19,6 +19,12 @@ function buildElement({title, poster_path, vote_average, id, recommended}) {
 function cleanMovieList() {
     window.container.innerHTML = ''
 }
+//ocupado para el filtro
+export function renderMovieListFromMap(list, map) {
+    cleanMovieList() //limpio lo que hay dentro de #container
+    list.forEach( movieId => renderElement( map.get(movieId) ) )
+}
+
 export default function renderMovieList(list) {
     cleanMovieList() //limpio lo que hay dentro de #container
     // console.table(list,['id','original_title','poster_path','poster_path'])
