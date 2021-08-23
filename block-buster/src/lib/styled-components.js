@@ -9,7 +9,13 @@ const elements = [
     'img',
     'article',
     'footer',
-    'header'
+    'header',
+    'section',
+    'form',
+    'input',
+    'button',
+    'select'
+
 ]
 
 function buildStyles(strings, dynamicValues, props){

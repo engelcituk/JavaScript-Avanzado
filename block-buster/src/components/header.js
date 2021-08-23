@@ -1,12 +1,6 @@
 import { Component } from './../lib/react/index.js'
 import styled from './../lib/styled-components.js'
 import Wrapper from './wrapper.js';
-{/* <header class="header">
-    <div class="wrapper">
-        <img src="./img/logo.png" alt="">
-    </div>
-</header> */}
-
 
 const HeaderStyled = styled.header`
     background: #0e3fa9;

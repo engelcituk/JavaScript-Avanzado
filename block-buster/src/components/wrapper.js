@@ -6,6 +6,4 @@ const WrapperStyled = styled.div`
     margin: auto;
 `
 
-
-
 export default WrapperStyled

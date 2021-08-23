@@ -44,12 +44,12 @@ body {
     display: none;
   }
   
-  form {
-    /* border: 1px solid red; */
+  /* border: 1px solid red; */
+  /* form {
     min-width: 320px;
     display: flex;
     gap: .5em;
-  }
+  } 
   input {
     font-size: 1rem;
     font-family: system-ui;
@@ -69,7 +69,7 @@ body {
     border: none;
     border-radius: .5em;
   }
-  
+  */
   .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
