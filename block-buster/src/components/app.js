@@ -4,6 +4,8 @@ import Header from './header.js'
 import Actions from './actions.js'
 import Search from './search.js'
 import Filters from './filters.js'
+import MovieList from './movie-list.js'
+
 
 const AppStyled = styled.div``
 
@@ -17,7 +19,8 @@ class App extends Component {
                         new Search(),
                         new Filters()
                     ]
-                })
+                }),
+                new MovieList()
             ]
         })
     }

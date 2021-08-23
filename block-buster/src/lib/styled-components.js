@@ -14,7 +14,8 @@ const elements = [
     'form',
     'input',
     'button',
-    'select'
+    'select',
+    'span'
 
 ]
 
